@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+
+function Plant () {
+	this.country = "Mexico";
+	this.isOrganic = true;
+	this.print = function(){
+		console.log("print Plant");
+	};
+}
+
+Plant.prototype = {area: "222m"};
+Plant.prototype.abc = 222;
+Plant.prototype.showNameAndColor =  function () {
+	console.log("I am a " + this.name + " and my color is " + this.color);
+}
+
+
+function Fruit (fruitName, fruitColor) {
+	this.name = fruitName;
+	this.color = fruitColor;
+}
+
+
+var plant = new Plant();
+plant.showNameAndColor = function () { //重写showNameAndColor方法
+	console.log("aaaaa");
+}
+Fruit.prototype = plant;
+
+
+var aBanana = new Fruit ("Banana", "Yellow");
+
+console.log(aBanana.name); 
+
+//继承了Plant.prototype的属性/方法
+console.log(aBanana.abc);
+aBanana.showNameAndColor(); 
+
+//不光是继承了Plant.prototype的属性/方法，也继承了Plant本身的属性和方法
+console.log(aBanana.country); 
+aBanana.print();
+
+</script>
+</html>
