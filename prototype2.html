@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script src="prototype3.js"></script>
+</head>
+<body>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+
+var dog = new Dog("AA");
+var dog2 = new Dog("BB");
+alert(dog.name);
+alert(dog.species);
+alert(dog2.species);
+
+Dog.prototype.species = "human";//原型的真正用处：修改所有Dog类的实例对象的species属性
+alert(dog.species);
+alert(dog2.species);//此处是"human"，因为species是共享的，隶属于原型，同一类的每个实例对象都有相同的原型对象
+
+
+dog.species = "flower";
+alert(dog.species);
+alert(dog2.species);//此处还是"human"，因为只修改了dog对象的species
+
+
+</script>
+</html>

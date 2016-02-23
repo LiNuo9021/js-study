@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+
+function Plant () {
+	this.country = "Mexico";
+	this.isOrganic = true;
+}
+
+Plant.prototype.showNameAndColor = function() {
+	console.log("I am a " + this.name + " and my color is " + this.color);
+};
+
+
+Plant.prototype.amIOrganic = function() {
+	if(this.isOrganic)
+		console.log("I am organic, Baby!");
+};
+
+
+function Fruit (fruitName, fruitColor) {
+	this.name = fruitName;
+	this.color = fruitColor;
+}
+
+
+//原型继承
+Fruit.prototype = new Plant();
+
+
+var aBanana = new Fruit("Banana", "Yellow");
+console.log(aBanana.name);
+console.log(aBanana.showNameAndColor());
+//这里还会打出undefined？
+
+//2个水果的原型：any object that uses the Fruit () constructor will inherit all the Fruit.prototype properties and methods and all the properties and methods from the Fruit’s prototype, which is Plant.prototype.
+
+
+</script>
+</html>
