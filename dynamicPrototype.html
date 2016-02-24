@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+
+function Person(name, age){
+	this.name = name;
+	this.age = age;
+	this.getName = function(){
+		alert(this.name);
+	};
+
+	//只有第一次初始化对象时才执行if
+	if(typeof this.getAge != "function"){
+		Person.prototype.getAge = function(){
+			alert(this.age);
+		};
+
+		Person.prototype.planet = "earth";
+	}
+}
+
+
+var person = new Person("li", 26);
+person.getName();
+person.getAge();
+alert(person.planet);
+
+var person2 = new Person("wang", 22);
+person2.getName();
+person2.getAge();
+alert(person.planet);
+
+
+</script>
+</html>
