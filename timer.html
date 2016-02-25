@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+<button onclick="delayAlert()">click</button>
+<button onclick="clearAlert()">click</button>
+
+
+</body>
+<script type="text/javascript">
+var timeoutID;
+
+function delayAlert(){
+	// console.log(new Date());
+
+	timeoutID = window.setTimeout(ale, 2000);
+
+	//匿名函数
+	// var intervalID = setTimeout(function() { alert("click begins") }, 1000);
+
+	// console.log(new Date());
+
+	// for(var i = 0; i < 1000; i++){
+	// 	for(var j = 0; j < 100; j++){
+	// 		console.log(0.1111*0.22222*i);			
+	// 	}
+	// }
+
+	// console.log(new Date());
+}
+
+function ale(){
+	// console.log("begins:" + new Date());
+	alert("click begins");
+}
+
+//alert之前取消
+function clearAlert(){
+	window.clearTimeout(timeoutID);
+}
+
+
+</script>
+</html>

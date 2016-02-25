@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+<button id="play">click</button>
+
+
+</body>
+<script type="text/javascript">
+
+Person = function(name,age){
+	this.name = name;
+	this.age = age;
+
+	this.dom = {
+		play : document.querySelector("#play")
+	};
+
+	this.dom.play.addEventListener("click",this);
+};
+
+//此处只能叫handleEvent
+Person.prototype.handleEvent = function(){
+	alert("click button");
+};
+
+var person = new Person();
+
+// for(var i in person){
+// 	alert(i);
+// }
+
+
+
+</script>
+</html>
