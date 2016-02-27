@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+function LateBloomer(){
+	this.petal = Math.ceil(Math.random() * 12) + 1;
+}
+
+// LateBloomer.prototype.bloom = function(){
+// 	window.setTimeout(this.declare, 1000);//declare调用时，this默认是window，this.petal是undefined
+// };
+
+LateBloomer.prototype.bloom = function(){
+	window.setTimeout(this.declare.bind(this), 1000);
+};
+
+LateBloomer.prototype.declare = function(){
+	alert("I am a flower with " + this.petal);
+};
+
+var lateBloomer = new LateBloomer();
+lateBloomer.bloom();
+
+
+</script>
+</html>
