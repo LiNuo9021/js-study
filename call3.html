@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+function greet(){
+	var i = [this.name, "is an awesome", this.career].join(" ");
+	alert(i);
+}
+
+var j = {
+	name: "LiNuo",
+	career: "Software Engineer"
+};
+
+greet.call(j);
+
+
+</script>
+</html>
