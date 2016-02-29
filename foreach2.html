@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+function Counter(){
+	this.sum = 0;
+	this.count = 0;
+}
+
+Counter.prototype.arrAdd = function(arr){
+	arr.forEach(function(ele){
+		this.sum += ele;
+		++this.count;
+	}, this);
+};
+
+
+var counter = new Counter();
+counter.arrAdd([1,2,3,4,5,6]);
+
+alert(counter.sum);
+alert(counter.count);
+
+
+</script>
+</html>

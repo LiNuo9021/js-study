@@ -6,7 +6,6 @@
 <body>
 
 
-
 </body>
 <script type="text/javascript">
 
@@ -14,12 +13,13 @@ function LateBloomer(){
 	this.petalCount = Math.ceil(Math.random() * 12) + 1;
 }
 
+
 LateBloomer.prototype.bloom = function(){
-	setTimeout(this.declare.bind(this), 1000);
+	window.setTimeout(this.declare.bind(this), 1000);
 };
 
 LateBloomer.prototype.declare = function(){
-	alert('I am a beautiful flower with ' + this.petalCount + ' petals!');
+	alert("I am a flower with " + this.petal);
 };
 
 var lateBloomer = new LateBloomer();

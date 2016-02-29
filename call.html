@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+function Product(name, price){
+	this.name = name;
+	this.price = price;
+
+	this.declare = function(){
+		alert("name:" + this.name + " price:" + this.price);
+	};
+}
+
+// Product.prototype.declare = function(){
+// 	alert("name:" + this.name);
+// };
+
+function Toy(name, price){
+	Product.call(this, name, price); //这里的this是Toy函数/对象，因此Toy继承了Product的属性和方法
+	this.category = "toy";
+}
+
+
+var toy = new Toy("dildo", "100");
+toy.declare();
+
+
+</script>
+</html>
