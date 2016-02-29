@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+</body>
+<script type="text/javascript">
+
+function list(){
+	return Array.prototype.slice.call(arguments);
+}
+
+
+var list0 = list([1,2,3]);
+alert(list0);//1,2,3
+
+
+var listFunc = list.bind(undefined, [37,22], 21.5);
+
+var list1 = listFunc();
+alert(list1);//37,22
+
+
+var list2 = listFunc(21,20,[19,18]);//与list.bind()后面直接加参数一样
+alert(list2);//37,22,21,20,19,18
+
+
+</script>
+</html>

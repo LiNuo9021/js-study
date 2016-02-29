@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+<div id="div1" style="background-color:red">hello</div>
+<div id="div2" style="background-color:green">Mr.li</div>
+
+<button onclick="clearAlert()">cancel</button>
+
+</body>
+<script type="text/javascript">
+var timeoutID;
+var div1 = document.querySelector("#div1");
+var div2 = document.querySelector("#div2");
+
+var start = function(){
+	timeoutID = setInterval(ale, 1000);
+};
+
+function ale(){
+	div1.style.backgroundColor = 
+		(div1.style.backgroundColor === "red" ? "green" : "red");
+
+	div2.style.backgroundColor = 
+		(div2.style.backgroundColor === "red" ? "green" : "red");
+}
+
+//alert之前取消
+function clearAlert(){
+	clearInterval(timeoutID);
+}
+
+start();	
+
+
+</script>
+</html>
