@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+var i =1;
+
+//外层用于3000秒后执行timer
+//内层用于递归调用匿名函数
+var timer = setTimeout(function(){ 
+    alert(i++) 
+    timer = setTimeout(arguments.callee,2000)
+},3000);
+
+
+</script>
+</html>

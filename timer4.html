@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+</head>
+<body>
+
+<table>
+	<tbody></tbody>
+</table>
+
+</body>
+<script type="text/javascript">
+var t1 =+ new Date();
+var tbody = document.getElementsByTagName("tbody")[0];
+
+for(var i =0; i <20000; i++){
+    var tr = document.createElement("tr");
+    for(var t =0; t <6; t++){
+    	var td = document.createElement("td");
+        td.appendChild(document.createTextNode(i +","+ t));
+        tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+}
+
+//设置为0，用标准延迟；在延迟的时候，JS引擎会执行GUI渲染进程，所以setTimeout()会等待渲染进程执行完毕再执行
+setTimeout(function(){
+    var t2 =+ new Date();
+    console.log(t2 - t1);
+},0);
+
+// var t2 =+ new Date();
+// console.log(t2 - t1);
+
+
+</script>
+</html>

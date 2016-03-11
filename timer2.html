@@ -8,16 +8,25 @@
 <div id="div1" style="background-color:red">hello</div>
 <div id="div2" style="background-color:green">Mr.li</div>
 
-<button onclick="clearAlert()">cancel</button>
+<button onclick="clearAlert()">cancel color</button>
+<button onclick="clearAlert2()">cancel paragraph</button>
+
+<span id="span1"></span>
+<span id="span2"></span>
 
 </body>
 <script type="text/javascript">
 var timeoutID;
+var timeoutID2;
 var div1 = document.querySelector("#div1");
 var div2 = document.querySelector("#div2");
+var span1 = document.querySelector("#span1");
+var span2 = document.querySelector("#span2");
+var count1 = 0;
+var count2 = 0;
 
 var start = function(){
-	timeoutID = setInterval(ale, 1000);
+	timeoutID = setInterval(ale, 100);
 };
 
 function ale(){
@@ -26,11 +35,28 @@ function ale(){
 
 	div2.style.backgroundColor = 
 		(div2.style.backgroundColor === "red" ? "green" : "red");
+
+	timeoutID2 = setInterval(ale2, 500);
+
+	console.log("ale1: " + (++count1));
+}
+
+function ale2(){
+	div1.innerHTML = 
+		(div1.innerHTML === "hello" ? "Mr.li" : "hello");
+	div2.innerHTML = 
+		(div2.innerHTML === "hello" ? "Mr.li" : "hello");
+
+	console.log("ale2: " + (++count2));	
 }
 
 //alert之前取消
 function clearAlert(){
 	clearInterval(timeoutID);
+}
+
+function clearAlert2(){
+	clearInterval(timeoutID2);
 }
 
 start();	
